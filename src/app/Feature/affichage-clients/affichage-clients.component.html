@@ -1,0 +1,28 @@
+<div>
+    <h1>Liste des clients</h1>
+
+    <form (ngSubmit)="searchClientsByVille()">
+        <label>Rechercher par ville:</label>
+        <input type="text" [(ngModel)]="ville" name="ville">
+        <button type="submit">Rechercher</button>
+    </form>
+
+
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of client">
+            <td>{{ client.id }}</td>
+            <td>{{ client.nom }}</td>
+            <td>{{ client.prenom }}</td>
+        </tr>
+    </tbody>
+</table>

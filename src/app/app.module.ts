@@ -3,12 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
+import { FormsModule } from '@angular/forms';
+import { CreateClientComponent } from './Feature/create-client/create-client.component';
+import { HeaderComponent } from './Feature/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AffichageClientsComponent } from './Feature/affichage-clients/affichage-clients.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateClientComponent,
+    HeaderComponent,
+    AffichageClientsComponent,
+    
   ],
+
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+HttpClientModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

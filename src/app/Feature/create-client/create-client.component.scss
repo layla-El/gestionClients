@@ -1,0 +1,15 @@
+form button[type="submit"],
+form input[type="file"] {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+label,
+input {
+    display: block;
+    margin-bottom: 10px;
+}
