@@ -7,7 +7,7 @@ import { clients } from "src/app/models/clients.model";
     providedIn: 'root'
 })
 export class clientService {
-    private apiUrl = 'http://localhost:3000/clients';
+    private apiUrl = 'à définir';
     constructor(private http: HttpClient) { }
 
     getClients(): Observable<clients[]> {
