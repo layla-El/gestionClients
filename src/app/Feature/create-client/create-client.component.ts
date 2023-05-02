@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { clients } from 'src/app/models/clients.model';
+import { clientService } from 'src/app/_shared/services/clientService.service';
+import { client } from 'src/app/models/client.model';
 
 @Component({
   selector: 'app-create-client',
@@ -8,7 +9,11 @@ import { clients } from 'src/app/models/clients.model';
 })
 export class CreateClientComponent implements OnInit {
 
-client?:clients
+  constructor(private userService: clientService) {
+    this.userService = userService;
+  }
+
+  client?: client;
   ngOnInit(): void {
 
   }
@@ -18,8 +23,12 @@ client?:clients
   adresse!: string;
   cin!: string;
   matricule!: string;
+  ville!: string;
 
   onSubmit() {
+    this.client = new client(1, this.nom, this.prenom, this.birthdate, this.cin, this.adresse, this.matricule, this.ville)
+    this.userService.addClient(this.client);
+
     console.log(this.nom);
     console.log(this.prenom);
     console.log(this.birthdate);

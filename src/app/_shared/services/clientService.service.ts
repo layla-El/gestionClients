@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/internal/Observable";
-import { clients } from "src/app/models/clients.model";
+import { client } from "src/app/models/client.model";
 
 @Injectable({
     providedIn: 'root'
@@ -10,23 +10,24 @@ export class clientService {
     private apiUrl = 'à définir';
     constructor(private http: HttpClient) { }
 
-    getClients(): Observable<clients[]> {
-        return this.http.get<clients[]>(this.apiUrl);
+    getclient(): Observable<client[]> {
+        return this.http.get<client[]>(this.apiUrl);
     }
-    getClientById(id: number): Observable<clients> {
+    getClientById(id: number): Observable<client> {
         const url = `${this.apiUrl}/${id}`;
-        return this.http.get<clients>(url);
+        return this.http.get<client>(url);
     }
-    searchClientsByVille(ville: string): Observable<clients[]> {
+    searchclientByVille(ville: string): Observable<client[]> {
         const url = `${this.apiUrl}?ville=${ville}`;
-        return this.http.get<clients[]>(url);
+        return this.http.get<client[]>(url);
     }
 
-    addClient(client: clients): Observable<clients> {
-        return this.http.post<clients>(this.apiUrl, client);
+    addClient(client: client): Observable<client> {
+        console.log(client);
+        return this.http.post<client>(this.apiUrl, client);
     }
 
-    updateClient(client: clients): Observable<any> {
+    updateClient(client: client): Observable<any> {
         const url = `${this.apiUrl}/${client.id}`;
         return this.http.put(url, client);
     }

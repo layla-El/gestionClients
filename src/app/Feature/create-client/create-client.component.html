@@ -1,23 +1,26 @@
-<form (ngSubmit)="onSubmit()">
-    <label>Nom:</label>
-    <input type="text" name="nom" [(ngModel)]="nom" required>
+<div>
 
-    <label>Prénom:</label>
-    <input type="text" name="prenom" [(ngModel)]="prenom" required>
+    <form class=container (ngSubmit)="onSubmit()">
+        <label>Nom:</label>
+        <input type="text" name="nom" [(ngModel)]="nom" required>
 
-    <label>Date de naissance:</label>
-    <input type="date" name="birthdate" [(ngModel)]="birthdate" required>
+        <label>Prénom:</label>
+        <input type="text" name="prenom" [(ngModel)]="prenom" required>
 
-    <label>Adresse:</label>
-    <input type="text" name="adresse" [(ngModel)]="adresse" required>
+        <label>Date de naissance:</label>
+        <input type="date" name="birthdate" [(ngModel)]="birthdate" required>
 
-    <label>CIN:</label>
-    <input type="text" name="cin" [(ngModel)]="cin" required>
+        <label>Adresse:</label>
+        <input type="text" name="adresse" [(ngModel)]="adresse" required>
 
-    <label>Matricule:</label>
-    <input type="text" name="matricule" [(ngModel)]="matricule" required>
-    <label>charger vos documents justificatifs:</label>
-    <input type="file" (change)="onFileSelected($event)" />
+        <label>CIN:</label>
+        <input type="text" name="cin" [(ngModel)]="cin" required>
 
-    <button type="submit">Enregistrer</button>
-</form>
+        <label>Matricule:</label>
+        <input type="text" name="matricule" [(ngModel)]="matricule" required>
+        <label>charger vos documents justificatifs:</label>
+        <input type="file" (change)="onFileSelected($event)" />
+
+        <button type="submit">Enregistrer</button>
+    </form>
+</div>

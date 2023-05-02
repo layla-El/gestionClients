@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { clientService } from 'src/app/_shared/services/clientService.service';
-import { clients } from 'src/app/models/clients.model';
+import { client } from 'src/app/models/client.model';
 
 @Component({
   selector: 'app-affichage-clients',
@@ -9,7 +9,7 @@ import { clients } from 'src/app/models/clients.model';
 })
 export class AffichageClientsComponent implements OnInit {
   @Input()
-  client?: clients[];
+  client?: client[];
   ville?: string;
 
 
@@ -20,7 +20,7 @@ export class AffichageClientsComponent implements OnInit {
     this.getClients();
   }
   getClients(): void {
-    this.clientService.getClients().subscribe(client => this.client = client);
+    this.clientService.getclient().subscribe(client => this.client = client);
   }
   deleteClient(id: number): void {
     this.clientService.deleteClient(id).subscribe(() => {
@@ -28,7 +28,7 @@ export class AffichageClientsComponent implements OnInit {
     });
   }
   searchClientsByVille(): void {
-    this.clientService.searchClientsByVille(this.ville!)
+    this.clientService.searchclientByVille(this.ville!)
       .subscribe(client => this.client = client);
   }
 
