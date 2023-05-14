@@ -6,7 +6,7 @@ import { CreateClientComponent } from './Feature/create-client/create-client.com
 
 const routes: Routes = [
   {
-    path: '', redirectTo: '/clients', pathMatch: 'full'
+    path: '', redirectTo: '/Clients', pathMatch: 'full'
   },
   {
     path: 'Clients', component: AffichageClientsComponent
